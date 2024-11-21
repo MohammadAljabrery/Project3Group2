@@ -37,33 +37,3 @@ class BallastSystem:
     def update_depth(self):
         self.depth = (self.tank1_volume+self.tank2_volume) / 10  # Simple depth model
 
-def main():
-    system = BallastSystem()
-    
-    while True:
-        print("\n--- Submarine Ballast System ---")
-        print(f"Current Tank 1 Volume: {system.tank1_volume:.2f}L")
-        print(f"Current Tank 2 Volume: {system.tank2_volume:.2f}L")
-        print(f"Total Volume: {system.tank1_volume + system.tank2_volume:.2f}L")
-        print(f"Current Depth: {system.depth:.2f}m")
-        
-        action = input("Enter 'f' to fill ballast or 'q' to quit: ").strip().lower()
-        if action == 'q':
-            print("Exiting the Ballast System.")
-            break
-        elif action == 'f':
-            try:
-                volume = float(input("Enter the volume to fill (in liters): "))
-                success, message = system.fill_ballast(volume)
-                if not success:
-                    print(f"Warning: {message}")
-                else:
-                    print("Ballast filled successfully!")
-            except ValueError:
-                print("Invalid input. Please enter a numeric value.")
-        else:
-            print("Invalid action. Please enter 'f' or 'q'.")
-
-# Run the main function
-if __name__ == "__main__":
-    main()
