@@ -197,7 +197,7 @@ def setup_gui():
     beamWidthFrame = Frame(window)
     beamWidthFrame.pack(anchor='w',pady=10)
     objectDetectionFrame = Frame(window, bg="lightgrey")
-    objectDetectionFrame.place(relx=0.95,rely=0.01,anchor='ne', width=800,height=400)
+    objectDetectionFrame.place(relx=0.98,rely=0.01,anchor='ne', width=600,height=400)
     
     # FREQUENCY
     frequencySlider = Scale(frequencyFrame,

@@ -1,5 +1,5 @@
 import unittest
-from WQS import *
+from WaterQualitySensor.WQS import *
 import customtkinter as ctk
 
 class TestWaterQualitySensor(unittest.TestCase):

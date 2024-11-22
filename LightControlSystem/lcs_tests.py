@@ -1,7 +1,7 @@
 import unittest
 import customtkinter as ctk
-from classes import Sliders
-from classes import OptionBox
+from LightControlSystem.classes import Sliders
+from LightControlSystem.classes import OptionBox
 
 class TestBrightnessSlider(unittest.TestCase):
     def setUp(self):

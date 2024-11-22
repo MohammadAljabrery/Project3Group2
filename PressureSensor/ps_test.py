@@ -1,5 +1,5 @@
 import unittest
-from PS import *
+from PressureSensor.PS import *
 from unittest.mock import patch
 import customtkinter as ctk
 import time
