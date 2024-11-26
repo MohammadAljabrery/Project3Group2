@@ -2,7 +2,7 @@ import secrets
 import os
 
 class SecuritySystem:
-    def __init__(self, file_path="employee_code.txt"):
+    def __init__(self, file_path="employee_codes.txt"):
         self.file_path = file_path
         self.employee_code = self.load_employee_codes()
 
