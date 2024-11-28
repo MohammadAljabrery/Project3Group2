@@ -1,9 +1,9 @@
-from buttons import *
-from sliders import *
-from label import *
-from optionboxes import *
-from switches import *
-from classes import *
+from .buttons import *
+from .sliders import *
+from .label import *
+from .optionboxes import *
+from .switches import *
+from .classes import *
 
 
 main_window = customtkinter.CTk()
@@ -59,6 +59,5 @@ switches(main_frame, ilcs_frame, elcs_frame,
          clr_frame, lab_frame, sr_frame, dp_frame, cr_frame,
          cq_frame, mr_frame, or_frame, sl_frame, nl_frame)
 
-sl_frame.grid_info()
 
 main_frame.mainloop()

@@ -5,19 +5,17 @@ import random
 class WaterQualitySensor:
     def __init__(self, root):
         self.root = root
-        self.root.geometry("400x300")
-        self.root.title("Water Quality Sensor Module")
 
         # Initialize sensor readings
         self.ph_level = 0.0
         self.ppm_level = 0.0
 
         # Create the labels to display sensor data
-        self.ph_label = ctk.CTkLabel(self.root, text="pH Level: -", font=("Arial", 16))
-        self.ph_label.pack(pady=10)
-
-        self.ppm_label = ctk.CTkLabel(self.root, text="PPM: -", font=("Arial", 16))
-        self.ppm_label.pack(pady=10)
+        # self.ph_label = ctk.CTkLabel(self.root, text="pH Level: -", font=("Arial", 16))
+        # self.ph_label.pack(pady=10)
+        #
+        # self.ppm_label = ctk.CTkLabel(self.root, text="PPM: -", font=("Arial", 16))
+        # self.ppm_label.pack(pady=10)
 
         # Start updating the sensor data
         self.update_sensor_data()
@@ -33,8 +31,8 @@ class WaterQualitySensor:
         self.simulate_sensor_data()
 
         # Update labels with new data
-        self.ph_label.configure(text=f"pH Level: {self.ph_level}")
-        self.ppm_label.configure(text=f"PPM: {self.ppm_level}")
+        # self.ph_label.configure(text=f"pH Level: {self.ph_level}")
+        # self.ppm_label.configure(text=f"PPM: {self.ppm_level}")
 
         # Schedule the next update
         self.root.after(2000, self.update_sensor_data)

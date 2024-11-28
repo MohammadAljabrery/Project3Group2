@@ -1,4 +1,4 @@
-from classes import *
+from .classes import *
 
 def optionbox(clr_frame, lab_frame, sr_frame, dp_frame, cr_frame,
               cq_frame, mr_frame, or_frame, sl_frame, nl_frame):

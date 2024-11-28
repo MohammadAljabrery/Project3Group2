@@ -1,4 +1,5 @@
 from LightControlSystem.classes import *
+
 def buttons(main_frame, frame_manager, ilcs_frame, elcs_frame,
             clr_frame, lab_frame, sr_frame, dp_frame, cr_frame,
             cq_frame, mr_frame, or_frame, sl_frame, nl_frame):

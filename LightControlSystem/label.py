@@ -1,4 +1,4 @@
-from classes import *
+from .classes import *
 
 def labels(main_frame, ilcs_frame, elcs_frame,
            clr_frame, lab_frame, sr_frame, dp_frame, cr_frame,
