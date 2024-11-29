@@ -6,7 +6,13 @@ from security_system import SecuritySystem
 from security_system_gui import SecuritySystemGUI
 from PressureSensor.PS import *  # Import the PressureSensor class
 from WaterQualitySensor.WQS import *
+from sonar import run_sonar_gui
+from navigation import run_navigation_gui
+from logger import LoggerSystem, run_logger_gui
 import customtkinter as ctk
+
+logger = LoggerSystem()
+
 
 
 def open_navigation_menu(root):
@@ -91,10 +97,48 @@ def open_navigation_menu(root):
         command=lambda: open_lcs(nav_root),
         width=30,
     ).pack(pady=10)
+    
+    ctk.CTkButton(
+        nav_root,
+        text="Sonar System",
+        font=("Arial", 14),
+        command=lambda: open_sonar_system(nav_root),
+        width=30,
+    ).pack(pady=10)
+    
+    ctk.CTkButton(
+        nav_root,
+        text="Navigation System",
+        font=("Arial", 14),
+        command=lambda: open_navigation_system(nav_root),
+        width=30,
+    ).pack(pady=10)
+    
+    ctk.CTkButton(
+        nav_root,
+        text="Logger System",
+        font=("Arial", 14),
+        command=lambda: open_logger_system(nav_root),
+        width=30,
+    ).pack(pady=10)
 
     nav_root.mainloop()
 
-
+def open_logger_system(nav_root):
+    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
+    nav_root.destroy()  # Close the navigation menu window
+    run_logger_gui()  # Start the Sonar GUI
+    
+def open_sonar_system(nav_root):
+    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
+    nav_root.destroy()  # Close the navigation menu window
+    run_sonar_gui()  # Start the Sonar GUI
+    
+def open_navigation_system(nav_root):
+    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
+    nav_root.destroy()  # Close the navigation menu window
+    run_navigation_gui()  # Start the Sonar GUI
+    
 def open_lcs(nav_root):
     """Launches the Light Control System GUI."""
     from LightControlSystem.tk import main_frame  # Import LCS main_window function

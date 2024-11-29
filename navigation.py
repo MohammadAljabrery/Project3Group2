@@ -204,5 +204,7 @@ def navigation_gui():
 
     updateStatus()
     window.mainloop()
-    
-navigation_gui()
+
+
+def run_navigation_gui():
+    navigation_gui()

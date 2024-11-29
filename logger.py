@@ -210,13 +210,15 @@ def LoggerGui():
 
         
 logger = LoggerSystem()
-
+'''
 logger.logAction("Mohammad", "do this doing that")
 logger.logAction("Nikhil", "Being Silly")
 logger.logAction("Henil", "Securing the security system")
-logger.logAction("Meera", "checking the envirnment, exploring nature and shit")
-LoggerGui()
+logger.logAction("Meera", "checking the envirnment, exploring nature and shit")'''
 
-print("\nALL LOGS:")
-print(logger.getLogs())
-logger.saveLogs()
+def run_logger_gui():
+    LoggerGui()
+
+    print("\nALL LOGS:")
+    print(logger.getLogs())
+    logger.saveLogs()

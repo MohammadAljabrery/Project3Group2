@@ -1,28 +1,11 @@
-[2024-11-27 14:15:29] USER: Nikhil | ACTION: Being Silly
-[2024-11-27 14:15:29] USER: Mohammad | ACTION: do this doing that
-[2024-11-27 14:15:29] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-27 14:15:29] USER: Henil | ACTION: Securing the security system
-[2024-11-27 14:14:55] USER: Nikhil | ACTION: Being Silly
-[2024-11-27 14:14:55] USER: Mohammad | ACTION: do this doing that
-[2024-11-27 14:14:55] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-27 14:14:55] USER: Henil | ACTION: Securing the security system
-[2024-11-27 14:14:29] USER: Nikhil | ACTION: Being Silly
-[2024-11-27 14:14:29] USER: Mohammad | ACTION: do this doing that
-[2024-11-27 14:14:29] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-27 14:14:29] USER: Henil | ACTION: Securing the security system
-[2024-11-22 16:55:43] USER: Nikhil | ACTION: Being Silly
-[2024-11-22 16:55:43] USER: Mohammad | ACTION: do this doing that
-[2024-11-22 16:55:43] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-22 16:55:43] USER: Henil | ACTION: Securing the security system
-[2024-11-22 16:37:35] USER: Nikhil | ACTION: Being Silly
-[2024-11-22 16:37:35] USER: Mohammad | ACTION: do this doing that
-[2024-11-22 16:37:35] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-22 16:37:35] USER: Henil | ACTION: Securing the security system
-[2024-11-22 12:13:49] USER: Nikhil | ACTION: Being Silly
-[2024-11-22 12:13:49] USER: Mohammad | ACTION: do this doing that
-[2024-11-22 12:13:49] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-22 12:13:49] USER: Henil | ACTION: Securing the security system
-[2024-11-22 12:10:58] USER: Nikhil | ACTION: Being Silly
-[2024-11-22 12:10:58] USER: Mohammad | ACTION: do this doing that
-[2024-11-22 12:10:58] USER: Meera | ACTION: checking the envirnment, exploring nature and shit
-[2024-11-22 12:10:58] USER: Henil | ACTION: Securing the security system
+[2024-11-29 05:00:00] USER: Nikhil | ACTION: analyzing sonar detection results
+[2024-11-29 04:30:13] USER: Mohammad | ACTION: realizing our gui's have seperate windows instead of frames (kill me)
+[2024-11-29 04:30:12] USER: Mohammad | ACTION: implementing back button (not going great)
+[2024-11-29 04:10:45] USER: Meera | ACTION: updating water quality data
+[2024-11-29 03:50:00] USER: Henil | ACTION: securing logger system
+[2024-11-29 03:25:18] USER: Nikhil | ACTION: just being silly 
+[2024-11-29 03:00:30] USER: Mohammad | ACTION: debugging navigation system
+[2024-11-29 02:45:10] USER: Meera | ACTION: checking environmental control
+[2024-11-29 02:15:45] USER: Henil | ACTION: validating security module
+[2024-11-29 02:00:15] USER: Nikhil | ACTION: testing light system
+[2024-11-29 01:15:29] USER: Mohammad | ACTION: doing this at 1 am

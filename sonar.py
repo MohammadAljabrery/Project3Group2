@@ -316,5 +316,6 @@ def setup_gui():
     window.mainloop()
 
 # Run the GUI setup function
-setup_gui()
+def run_sonar_gui():
+    setup_gui()
     
