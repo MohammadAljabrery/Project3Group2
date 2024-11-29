@@ -9,6 +9,8 @@ from WaterQualitySensor.WQS import *
 from sonar import run_sonar_gui
 from navigation import run_navigation_gui
 from logger import LoggerSystem, run_logger_gui
+from security_system import SecuritySystem
+from ballast_system import BallastSystem
 import customtkinter as ctk
 
 logger = LoggerSystem()
@@ -164,10 +166,20 @@ def open_environmental_control_system(nav_root):
 
 def open_ballast_system(nav_root):
     """Launches the Ballast System GUI."""
-    nav_root.destroy()  # Close the navigation menu
-    ballast_root = tk.Tk()
-    app = BallastSystemGUI(ballast_root)  # Pass the root window
-    ballast_root.mainloop()
+    # Hide the navigation root instead of destroying it
+    nav_root.withdraw()
+
+    # Create a new window for the Ballast System GUI
+    ballast_window = tk.Toplevel(nav_root)
+    ballast_window.title("Ballast System")
+    ballast_window.geometry("1920x1080")
+    
+    def go_back():
+        # Close the Ballast System window and show the navigation menu
+        ballast_window.destroy()
+        nav_root.deiconify()
+
+    BallastSystemGUI(ballast_window, go_back).pack(fill="both", expand=True)
 
 
 def validation_callback(result, root):
