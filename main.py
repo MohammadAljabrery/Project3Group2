@@ -25,7 +25,7 @@ def open_navigation_menu(root):
     # Create a new window for the navigation menu
     nav_root = tk.Tk()
     nav_root.title("Submarine Systems Navigation")
-    nav_root.geometry("800x600")
+    nav_root.geometry("1920x1080")
 
     # Title label
     ctk.CTkLabel(nav_root, text="Select a Submarine System", font=("Arial", 18)).pack(pady=20)
