@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 from PropulsionSystem import PropulsionSystem  # Import Propulsion System GUI
 from enviornmentControlSystem import SubmarineEnvironmentalControlSystem  # Import Environmental Control System GUI
 from ballast_system_gui import BallastSystemGUI  # Import Ballast System GUI
@@ -6,9 +7,9 @@ from security_system import SecuritySystem
 from security_system_gui import SecuritySystemGUI
 from PressureSensor.PS import *  # Import the PressureSensor class
 from WaterQualitySensor.WQS import *
-from sonar import run_sonar_gui
-from navigation import run_navigation_gui
-from logger import LoggerSystem, run_logger_gui
+from sonar import run_sonar_frame, SonarFrame
+from navigation import NavigationFrame
+from logger import LoggerSystem, run_logger_frame
 from security_system import SecuritySystem
 from ballast_system import BallastSystem
 import customtkinter as ctk
@@ -109,12 +110,13 @@ def open_navigation_menu(root):
     ).pack(pady=10)
     
     ctk.CTkButton(
-        nav_root,
-        text="Navigation System",
-        font=("Arial", 14),
-        command=lambda: open_navigation_system(nav_root),
-        width=30,
+    nav_root,
+    text="Navigation System",
+    font=("Arial", 14),
+    command=lambda: open_navigation_system(nav_root),
+    width=30,
     ).pack(pady=10)
+
     
     ctk.CTkButton(
         nav_root,
@@ -127,19 +129,35 @@ def open_navigation_menu(root):
     nav_root.mainloop()
 
 def open_logger_system(nav_root):
-    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
-    nav_root.destroy()  # Close the navigation menu window
-    run_logger_gui()  # Start the Sonar GUI
+    nav_root.withdraw()  # Hide the navigation menu
+    logger_root = tk.Tk()
+    logger_root.title("Logger System")
+    logger_root.geometry("1920x1080")
+    run_logger_frame(logger_root, nav_root, logger)  # Pass logger system instance
+    logger_root.mainloop()
+
     
 def open_sonar_system(nav_root):
-    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
-    nav_root.destroy()  # Close the navigation menu window
-    run_sonar_gui()  # Start the Sonar GUI
+    nav_root.withdraw()  # Hide the navigation menu window
+    sonar_root = tk.Tk()  # Create a new root window for the Sonar System
+    sonar_root.title("Sonar System")
+    sonar_root.geometry("1920x1080")
+    sonar_frame = SonarFrame(sonar_root, nav_root)  # Pass the navigation menu window as a reference
+    sonar_frame.pack(fill=tk.BOTH, expand=True)
+    sonar_root.mainloop()
+    
+
+
     
 def open_navigation_system(nav_root):
-    #logger.logAction("Navigation", "Opened Sonar System")  # Log the action
-    nav_root.destroy()  # Close the navigation menu window
-    run_navigation_gui()  # Start the Sonar GUI
+    nav_root.withdraw()  # Hide the navigation menu window
+    navigation_root = tk.Tk()  # Create a new root window for the Navigation System
+    navigation_root.title("Navigation System")
+    navigation_root.geometry("1920x1080")
+    navigation_frame = NavigationFrame(navigation_root, nav_root)  # Pass the navigation menu window as a reference
+    navigation_frame.pack(fill=tk.BOTH, expand=True)
+    navigation_root.mainloop()
+
     
 def open_lcs(nav_root):
     """Launches the Light Control System GUI."""
