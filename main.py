@@ -17,7 +17,6 @@ import customtkinter as ctk
 logger = LoggerSystem()
 
 
-
 def open_navigation_menu(root):
     """Opens the navigation menu after successful security validation."""
     # Destroy the security window
@@ -27,16 +26,18 @@ def open_navigation_menu(root):
     nav_root = tk.Tk()
     nav_root.title("Submarine Systems Navigation")
     nav_root.geometry("1920x1080")
+    nav_root.configure(bg="gray15")
 
-    # Title label
-    ctk.CTkLabel(nav_root, text="Select a Submarine System", font=("Arial", 18)).pack(pady=20)
+    ctk.CTkLabel(
+        nav_root, text="Select a Submarine System", font=("Arial", 25), text_color="white", 
+    ).pack(pady=20)
 
-    # Create the PressureSensor object (no need for additional label creation here)
-    pressure_sensor = PressureSensor(nav_root)  # This will handle pressure reading and updates
-
-    # Create the pressure label (this label will be updated manually)
-    pressure_label = ctk.CTkLabel(nav_root, text="Current Pressure: -", font=("Arial", 16))
-    pressure_label.place(relx=1.0, rely=0.05, anchor='ne')  # Position at top-right corner
+    # Pressure sensor and label
+    pressure_sensor = PressureSensor(nav_root)
+    pressure_label = ctk.CTkLabel(
+        nav_root, text="Current Pressure: -", font=("Arial", 19), text_color="white", 
+    )
+    pressure_label.place(relx=1.0, rely=0.05, anchor="ne")
 
     def update_pressure_label():
         """Update the pressure label with the current pressure."""
@@ -51,10 +52,10 @@ def open_navigation_menu(root):
     water_quality_sensor = WaterQualitySensor(nav_root)  # Water quality sensor displays below pressure readings
 
     # Create the water quality labels (these labels will be updated by the WaterQualitySensor)
-    ph_label = ctk.CTkLabel(nav_root, text="pH Level: -", font=("Arial", 16))
+    ph_label = ctk.CTkLabel(nav_root, text="pH Level: -", font=("Arial", 19), text_color="white")
     ph_label.place(relx=1.0, rely=0.15, anchor='ne')  # Position below pressure readings on the right side
 
-    ppm_label = ctk.CTkLabel(nav_root, text="PPM: -", font=("Arial", 16))
+    ppm_label = ctk.CTkLabel(nav_root, text="PPM: -", font=("Arial", 19), text_color="white")
     ppm_label.place(relx=1.0, rely=0.20, anchor='ne')  # Position below pH level label on the right side
 
     def update_water_quality_data():
@@ -72,61 +73,62 @@ def open_navigation_menu(root):
     ctk.CTkButton(
         nav_root,
         text="Propulsion System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_propulsion_system(nav_root),
-        width=30,
+         width=270, height= 70
     ).pack(pady=10)
 
     ctk.CTkButton(
         nav_root,
         text="Environmental Control System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_environmental_control_system(nav_root),
-        width=30,
+         width=270, height= 70
     ).pack(pady=10)
 
     ctk.CTkButton(
         nav_root,
         text="Ballast System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_ballast_system(nav_root),
-        width=30,
+        width=270, height= 70
     ).pack(pady=10)
 
     ctk.CTkButton(
         nav_root,
         text="Light Control System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_lcs(nav_root),
-        width=30,
+         width=270, height= 70
     ).pack(pady=10)
-    
+
     ctk.CTkButton(
         nav_root,
         text="Sonar System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_sonar_system(nav_root),
-        width=30,
+         width=270, height= 70
     ).pack(pady=10)
-    
+
     ctk.CTkButton(
     nav_root,
     text="Navigation System",
-    font=("Arial", 14),
+    font=("Arial", 19),
     command=lambda: open_navigation_system(nav_root),
-    width=30,
+     width=270, height= 70
     ).pack(pady=10)
 
     
     ctk.CTkButton(
         nav_root,
         text="Logger System",
-        font=("Arial", 14),
+        font=("Arial", 19),
         command=lambda: open_logger_system(nav_root),
-        width=30,
+        width=270, height= 70
     ).pack(pady=10)
 
     nav_root.mainloop()
+
 
 def open_logger_system(nav_root):
     nav_root.withdraw()  # Hide the navigation menu
@@ -191,7 +193,7 @@ def open_ballast_system(nav_root):
     ballast_window = tk.Toplevel(nav_root)
     ballast_window.title("Ballast System")
     ballast_window.geometry("1920x1080")
-    
+
     def go_back():
         # Close the Ballast System window and show the navigation menu
         ballast_window.destroy()
@@ -203,20 +205,19 @@ def open_ballast_system(nav_root):
 def validation_callback(result, root):
     """Callback function to handle security system validation."""
     if result:
-        open_navigation_menu(root)  # Proceed to the navigation menu
+        open_navigation_menu(root)      
+        
+        
     else:
         print("Invalid code or Access Denied.")  # Handle invalid access
 
 
 def main():
-    """Main function to start the application."""
-    security_system = SecuritySystem()  # Initialize the security system
-    root = tk.Tk()  # Main Tkinter window for the security system
-    app = SecuritySystemGUI(root, security_system, validation_callback)  # Pass the callback with root
-
-    # Start the GUI loop
+    security_system = SecuritySystem()
+    root = ctk.CTk()
+    root.geometry("1920x1080")
+    app = SecuritySystemGUI(root, security_system, validation_callback)
     root.mainloop()
-
 
 if __name__ == "__main__":
     main()
